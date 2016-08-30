@@ -1,7 +1,6 @@
 package com.schoology.app.calculatorlibrary.operations;
 
 import java.math.BigDecimal;
-import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 /**

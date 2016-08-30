@@ -10,8 +10,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by SleepWalker on 25.08.2016.
  */

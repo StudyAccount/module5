@@ -1,6 +1,5 @@
 package com.schoology.app.calculatorlibrary.types;
 
-import com.schoology.app.calculatorlibrary.types.DoubleType;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

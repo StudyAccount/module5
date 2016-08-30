@@ -1,9 +1,7 @@
 package com.schoology.app.calculatorlibrary.operations;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
-import java.util.LongSummaryStatistics;
 
 /**
  * Created by SleepWalker on 25.08.2016.

@@ -5,7 +5,7 @@ package com.schoology.app.calculatorlibrary.types;
  */
 public class DoubleType implements TypeSupport {
 
-@Override
+    @Override
     public boolean checkForTypeSupport(String inputData) {
 
         try{

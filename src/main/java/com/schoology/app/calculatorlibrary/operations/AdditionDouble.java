@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class AdditionDouble implements Operation {
 
-
     @Override
     public String counter(List<String> inputData) {
 
