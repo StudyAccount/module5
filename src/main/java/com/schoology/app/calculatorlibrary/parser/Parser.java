@@ -1,5 +1,6 @@
 package com.schoology.app.calculatorlibrary.parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,18 +9,12 @@ import java.util.List;
 public class Parser {
 
     private static final int ASCII_COMA = 44;
-    private List<String> operation;
-    private List<String> operands;
-
-    public Parser(List<String> operation, List<String> operands) {
-        this.operation = operation;
-        this.operands = operands;
-    }
+    private List<String> operation = new ArrayList<>();
+    private List<String> operands = new ArrayList<>();
 
     public void parser (String inputString){
 
         int iterator = 0;
-        int comaCounter = 0;
         StringBuilder inputData = new StringBuilder();
         inputData.append(inputString);
         StringBuilder tempValues = new StringBuilder();
@@ -30,22 +25,20 @@ public class Parser {
 
         while (iterator < inputData.length()){
 
-            while (inputData.charAt(iterator) != ASCII_COMA){
+            while((iterator < inputData.length()) && (inputData.charAt(iterator) != ASCII_COMA) ) {
 
                 tempValues.append(inputData.charAt(iterator));
                 iterator++;
-
-                if (inputData.charAt(iterator) == ASCII_COMA) {
-                    comaCounter++;
-                }
             }
 
-            if (comaCounter > 0){
+            if (operation.isEmpty()){
 
                 operation.add(tempValues.toString());
+                tempValues.delete(0, tempValues.length());
             } else {
 
                 operands.add(tempValues.toString());
+                tempValues.delete(0, tempValues.length());
             }
 
             iterator++;
