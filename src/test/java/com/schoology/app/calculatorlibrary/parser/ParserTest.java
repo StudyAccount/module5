@@ -22,7 +22,7 @@ public class ParserTest {
     @Before
     public void setUp() throws Exception {
 
-        parser = new Parser();
+        parser = new Parser(resultOperations,resultOperands);
         inputString = "*,33,2";
         resultOperands = new ArrayList<>();
         resultOperations = new ArrayList<>();

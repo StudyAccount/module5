@@ -9,10 +9,17 @@ import java.util.List;
 public class Parser {
 
     private static final int ASCII_COMA = 44;
-    private List<String> operation = new ArrayList<>();
-    private List<String> operands = new ArrayList<>();
+    private List<String> operation;
+    private List<String> operands;
+
+    public Parser(List<String> operation, List<String> operands) {
+        this.operation = operation;
+        this.operands = operands;
+    }
 
     public void parser (String inputString){
+        operation = new ArrayList<>();
+        operands = new ArrayList<>();
 
         int iterator = 0;
         StringBuilder inputData = new StringBuilder();
