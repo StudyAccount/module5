@@ -7,9 +7,9 @@ import java.util.List;
  */
 public interface Calculator {
 
-    String checkType(List<String> operands);
+    int checkType(List<String> operands);
 
-    boolean checkOperation(List<String> operation);
+    int checkOperation(List<String> operation);
 
     String calculate(String input);
 
