@@ -9,7 +9,7 @@ import java.util.List;
 public class SubtractionDouble implements Operation {
 
     @Override
-    public String counter(List<String> inputData) {
+    public String count(List<String> inputData) {
 
         double firstDouble = Double.parseDouble(inputData.get(0));
         double secondDouble = Double.parseDouble(inputData.get(1));

@@ -52,7 +52,7 @@ public class AdditionLongTest {
     @Test
     public void counter() throws Exception {
 
-        final String actual = additionLong.counter(inputData);
+        final String actual = additionLong.count(inputData);
         Assert.assertEquals("test results", expectation, actual);
 
     }

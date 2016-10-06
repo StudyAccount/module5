@@ -7,5 +7,5 @@ import java.util.List;
  */
 public interface Operation {
 
-    String counter (List<String> inputData);
+    String count(List<String> inputData);
 }

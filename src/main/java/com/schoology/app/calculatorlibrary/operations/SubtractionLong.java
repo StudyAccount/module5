@@ -9,7 +9,7 @@ import java.util.List;
 public class SubtractionLong implements Operation {
 
     @Override
-    public String counter(List<String> inputData) {
+    public String count(List<String> inputData) {
 
         Long firstLong = Long.parseLong(inputData.get(0));
         Long secondLong = Long.parseLong(inputData.get(1));

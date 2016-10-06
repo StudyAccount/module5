@@ -1,9 +1,13 @@
 package com.schoology.app.calculatorlibrary.calculator;
 
+import com.schoology.app.calculatorlibrary.factory.CalculatorOperationFactory;
+import com.schoology.app.calculatorlibrary.operations.Operation;
+import com.schoology.app.calculatorlibrary.parser.Parser;
 import com.schoology.app.calculatorlibrary.types.DoubleType;
 import com.schoology.app.calculatorlibrary.types.LongType;
 import com.schoology.app.calculatorlibrary.types.TypeSupport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,7 +58,7 @@ public class SimpleCalculator implements Calculator {
             return 2;
         } else {
 
-            return 3;
+            return 0;
         }
 
     }
@@ -62,8 +66,39 @@ public class SimpleCalculator implements Calculator {
     @Override
     public String calculate(String input) {
 
+        List<String> operation = new ArrayList<>();
+        List<String> operands = new ArrayList<>();
+        CalculatorOperationFactory calculatorOperationFactory = new CalculatorOperationFactory();
+        Parser parser = new Parser(operation, operands);
+        Operation currentOperation;
 
+        parser.parser(input);
 
-        return null;
+        int typeOfOperationCode = checkType(parser.getOperands());
+        int operationCode = checkOperation(parser.getOperation());
+
+        if (typeOfOperationCode == 1) {
+
+            if (operationCode == 1){
+
+                currentOperation = calculatorOperationFactory.getOperationInstance(1);
+            }else if (operationCode == 2){
+
+                currentOperation = calculatorOperationFactory.getOperationInstance(3);
+            }else return "Not supported operation";
+        } else if (typeOfOperationCode == 2) {
+
+            if (operationCode == 1){
+
+                currentOperation = calculatorOperationFactory.getOperationInstance(0);
+            }else if (operationCode == 2){
+
+                currentOperation = calculatorOperationFactory.getOperationInstance(2);
+            }else return "Not supported operation";
+        }else return "Not supported type";
+
+        String result = currentOperation.count(parser.getOperands());
+
+        return result;
     }
 }

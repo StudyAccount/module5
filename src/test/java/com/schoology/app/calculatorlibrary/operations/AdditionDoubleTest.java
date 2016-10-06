@@ -53,7 +53,7 @@ public class AdditionDoubleTest {
     @Test
     public void counter() throws Exception {
 
-        final String actual = additionDouble.counter(inputData);
+        final String actual = additionDouble.count(inputData);
         Assert.assertEquals("test results", expectation, actual);
 
     }

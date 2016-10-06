@@ -51,7 +51,7 @@ public class SubtractionLongTest {
     @Test
     public void counter() throws Exception {
 
-        final String actual = subtractionLong.counter(inputData);
+        final String actual = subtractionLong.count(inputData);
         Assert.assertEquals("test results", expectation, actual);
 
     }
