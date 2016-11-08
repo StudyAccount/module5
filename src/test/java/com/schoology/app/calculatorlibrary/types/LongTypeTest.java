@@ -41,7 +41,7 @@ public class LongTypeTest {
     @Test
     public void testCheckForTypeSupport() throws Exception {
 
-        final boolean result = longType.checkForTypeSupport(inputString);
+        final boolean result = longType.checkType(inputString);
         Assert.assertArrayEquals("Currrent: ", new boolean[]{expectation}, new boolean[]{result});
 
     }

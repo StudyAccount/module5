@@ -9,26 +9,22 @@ import java.util.List;
 public class Parser {
 
     private static final int ASCII_COMA = 44;
-    private List<String> operation;
+    private String operation;
     private List<String> operands;
 
-    public Parser(List<String> operation, List<String> operands) {
+    public Parser(String operation, List<String> operands) {
         this.operation = operation;
         this.operands = operands;
     }
 
     public void parser (String inputString){
-        operation = new ArrayList<>();
+        operation = null;
         operands = new ArrayList<>();
 
         int iterator = 0;
         StringBuilder inputData = new StringBuilder();
         inputData.append(inputString);
         StringBuilder tempValues = new StringBuilder();
-
-        if (inputData.length() == 0){
-            System.out.println("Nothing was entered");
-        }
 
         while (iterator < inputData.length()){
 
@@ -38,9 +34,9 @@ public class Parser {
                 iterator++;
             }
 
-            if (operation.isEmpty()){
+            if (operation == null){
 
-                operation.add(tempValues.toString());
+                operation = tempValues.toString();
                 tempValues.delete(0, tempValues.length());
             } else {
 
@@ -56,7 +52,7 @@ public class Parser {
         return operands;
     }
 
-    public List<String> getOperation() {
+    public String getOperation() {
         return operation;
     }
 }

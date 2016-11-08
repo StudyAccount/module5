@@ -11,7 +11,7 @@ public class Runner {
         Calculator simpleCalculator = new SimpleCalculator();
 
 
-        String currentOperation = simpleCalculator.calculate("6,asd.222,5");
+        String currentOperation = simpleCalculator.calculate("+,222,5");
 
 
         System.out.println(currentOperation);

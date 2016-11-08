@@ -5,7 +5,7 @@ import com.schoology.app.calculatorlibrary.operations.Operation;
 import com.schoology.app.calculatorlibrary.parser.Parser;
 import com.schoology.app.calculatorlibrary.types.DoubleType;
 import com.schoology.app.calculatorlibrary.types.LongType;
-import com.schoology.app.calculatorlibrary.types.TypeSupport;
+import com.schoology.app.calculatorlibrary.types.Type;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +17,19 @@ public class SimpleCalculator implements Calculator {
 
     @Override
     public int checkType(List<String> operands) {
-        TypeSupport doubleType = new DoubleType();
-        TypeSupport longType = new LongType();
+        Type doubleType = new DoubleType();
+        Type longType = new LongType();
         boolean longCode = true;
         boolean doubleCode = true;
 
         for (String operand:operands) {
 
-            if (longType.checkForTypeSupport(operand) == false){
+            if (longType.checkType(operand) == false){
 
                 longCode = false;
             }
 
-            if (doubleType.checkForTypeSupport(operand) == false){
+            if (doubleType.checkType(operand) == false){
 
                 doubleCode = false;
             }
@@ -48,12 +48,12 @@ public class SimpleCalculator implements Calculator {
     }
 
     @Override
-    public int checkOperation(List<String> operation) {
+    public int checkOperation(String operation) {
 
-        if ("+".equals(operation.get(0))){
+        if ("+".equals(operation)){
 
             return 1;
-        } else if ("-".equals(operation.get(0))){
+        } else if ("-".equals(operation)){
 
             return 2;
         } else {
@@ -66,7 +66,7 @@ public class SimpleCalculator implements Calculator {
     @Override
     public String calculate(String input) {
 
-        List<String> operation = new ArrayList<>();
+        String operation = null;
         List<String> operands = new ArrayList<>();
         CalculatorOperationFactory calculatorOperationFactory = new CalculatorOperationFactory();
         Parser parser = new Parser(operation, operands);

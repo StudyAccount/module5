@@ -43,7 +43,7 @@ public class DoubleTypeTest {
     @Test
     public void testCheckForTypeSupport() throws Exception {
 
-        final boolean result = doubleType.checkForTypeSupport(inputString);
+        final boolean result = doubleType.checkType(inputString);
 
         Assert.assertArrayEquals("Currrent: ", new boolean[]{expectation}, new boolean[]{result});
 

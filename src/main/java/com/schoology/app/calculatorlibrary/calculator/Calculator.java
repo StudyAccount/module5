@@ -9,7 +9,7 @@ public interface Calculator {
 
     int checkType(List<String> operands);
 
-    int checkOperation(List<String> operation);
+    int checkOperation(String operation);
 
     String calculate(String input);
 

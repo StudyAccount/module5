@@ -14,23 +14,21 @@ public class ParserTest {
 
     private static List<String> expectedOperands;
     private static List<String> resultOperands;
-    private static List<String> expectedOperations;
-    private static List<String> resultOperations;
+    private static String expectedOperations;
+    private static String resultOperations;
     Parser parser;
     private static String inputString;
 
     @Before
     public void setUp() throws Exception {
 
-        parser = new Parser(resultOperations,resultOperands);
+        parser = new Parser(resultOperations, resultOperands);
         inputString = "*,33,2";
         resultOperands = new ArrayList<>();
-        resultOperations = new ArrayList<>();
         expectedOperands = new ArrayList<>();
-        expectedOperations = new ArrayList<>();
         expectedOperands.add("33");
         expectedOperands.add("2");
-        expectedOperations.add("*");
+        expectedOperations ="*";
     }
 
     @Test
