@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by SleepWalker on 25.08.2016.
  */
-public class SubtractionLong implements Operation {
+public class SubtractionLong implements Subtraction {
 
     @Override
     public String count(List<String> inputData) {

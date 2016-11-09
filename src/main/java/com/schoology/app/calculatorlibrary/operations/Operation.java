@@ -7,5 +7,8 @@ import java.util.List;
  */
 public interface Operation {
 
+    String getOperationSymbol();
+
     String count(List<String> inputData);
+
 }
