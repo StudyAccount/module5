@@ -3,9 +3,9 @@ package com.schoology.app.calculatorlibrary.calculator;
 import com.schoology.app.calculatorlibrary.factory.CalculatorOperationFactory;
 import com.schoology.app.calculatorlibrary.operations.Operation;
 import com.schoology.app.calculatorlibrary.parser.Parser;
-import com.schoology.app.calculatorlibrary.types.DoubleType;
-import com.schoology.app.calculatorlibrary.types.LongType;
-import com.schoology.app.calculatorlibrary.types.Type;
+import com.schoology.app.calculatorlibrary.types.DoubleSupportedType;
+import com.schoology.app.calculatorlibrary.types.LongSupportedType;
+import com.schoology.app.calculatorlibrary.types.SupportedType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +17,19 @@ public class SimpleCalculator implements Calculator {
 
     @Override
     public int checkType(List<String> operands) {
-        Type doubleType = new DoubleType();
-        Type longType = new LongType();
+        SupportedType doubleSupportedType = new DoubleSupportedType();
+        SupportedType longSupportedType = new LongSupportedType();
         boolean longCode = true;
         boolean doubleCode = true;
 
         for (String operand:operands) {
 
-            if (longType.checkType(operand) == false){
+            if (longSupportedType.checkType(operand) == false){
 
                 longCode = false;
             }
 
-            if (doubleType.checkType(operand) == false){
+            if (doubleSupportedType.checkType(operand) == false){
 
                 doubleCode = false;
             }

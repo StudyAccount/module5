@@ -12,12 +12,12 @@ import java.util.Collection;
  * Created by User on 23.08.2016.
  */
 @RunWith(value = Parameterized.class)
-public class LongTypeTest {
+public class LongSupportedTypeTest {
     private static String inputString;
     private static boolean expectation;
-    public static final LongType longType = new LongType();
+    public static final LongSupportedType longType = new LongSupportedType();
 
-    public LongTypeTest(String inputString, boolean expectation) {
+    public LongSupportedTypeTest(String inputString, boolean expectation) {
 
         this.inputString = inputString;
         this.expectation = expectation;

@@ -13,13 +13,13 @@ import java.util.Collection;
  */
 
 @RunWith(value = Parameterized.class)
-public class DoubleTypeTest {
+public class DoubleSupportedTypeTest {
 
     private static String inputString;
     private static boolean expectation;
-    public static final DoubleType doubleType = new DoubleType();
+    public static final DoubleSupportedType doubleType = new DoubleSupportedType();
 
-    public DoubleTypeTest(String inputString, boolean expectation) {
+    public DoubleSupportedTypeTest(String inputString, boolean expectation) {
 
         this.inputString = inputString;
         this.expectation = expectation;
