@@ -1,14 +1,17 @@
 package com.schoology.app.calculatorlibrary.calculator;
 
 import com.schoology.app.calculatorlibrary.factory.CalculatorOperationFactory;
-import com.schoology.app.calculatorlibrary.operations.Operation;
+import com.schoology.app.calculatorlibrary.operations.*;
 import com.schoology.app.calculatorlibrary.parser.Parser;
+import com.schoology.app.calculatorlibrary.registry.Registry;
 import com.schoology.app.calculatorlibrary.types.DoubleSupportedType;
 import com.schoology.app.calculatorlibrary.types.LongSupportedType;
 import com.schoology.app.calculatorlibrary.types.SupportedType;
+import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 
 /**
  * Created by User on 04.10.2016.
@@ -16,7 +19,59 @@ import java.util.List;
 public class SimpleCalculator implements Calculator {
 
     @Override
+    public boolean checkIfTypeIsSupported(List<String> operands) {
+        Registry registry = new Registry();
+        List<SupportedType> supportedTypes = registry.getAvailableTypesList();
+        boolean isSupportedType = false;
+
+        supportedTypes.add(new DoubleSupportedType());
+        supportedTypes.add(new LongSupportedType());
+
+        for (SupportedType types : supportedTypes){
+
+            if (isSupportedType == true){
+
+                return true;
+            }
+
+            for(String operand : operands){
+
+                if(types.checkType(operand) == false){
+
+                    isSupportedType = false;
+                    break;
+                }
+
+                isSupportedType = true;
+            }
+        }
+
+        return false;
+    }
+
+    @Override
+    public Operation checkIfOperationIsSupported(String operation) {
+        Registry registry = new Registry();
+        List<Operation> supportedOperations = registry.getAvailableOperationsList();
+
+
+        supportedOperations.add(new AdditionLong());
+        supportedOperations.add(new AdditionDouble());
+        supportedOperations.add(new SubtractionLong());
+        supportedOperations.add(new SubtractionDouble());
+
+        for (Operation operations : supportedOperations){
+
+
+
+        }
+
+        return null;
+    }
+
+    @Override
     public int checkType(List<String> operands) {
+
         SupportedType doubleSupportedType = new DoubleSupportedType();
         SupportedType longSupportedType = new LongSupportedType();
         boolean longCode = true;
