@@ -15,6 +15,7 @@ import java.util.List;
  */
 @RunWith(value = Parameterized.class)
 public class SubtractionLongTest {
+
     private static List<String> inputData;
     private static String expectation;
     private static final SubtractionLong subtractionLong = new SubtractionLong();
@@ -46,7 +47,6 @@ public class SubtractionLongTest {
                 {d, "0"},
         });
     }
-
 
     @Test
     public void counter() throws Exception {

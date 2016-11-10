@@ -11,13 +11,20 @@ public class SubtractionLong implements Subtraction {
     @Override
     public String count(List<String> inputData) {
 
-        Long firstLong = Long.parseLong(inputData.get(0));
-        Long secondLong = Long.parseLong(inputData.get(1));
+        BigInteger result = BigInteger.ZERO;
 
-        BigInteger firstInteger = BigInteger.valueOf(firstLong);
-        BigInteger secondInteger = BigInteger.valueOf(secondLong);
+        if (inputData.size() >= 1){
+            Long firstElement = Long.parseLong(inputData.get(0));
+            result = BigInteger.valueOf(firstElement);
+            inputData.remove(0);
+        }
 
-        BigInteger result =firstInteger.subtract(secondInteger);
+        for(String element : inputData){
+            Long termLong = Long.parseLong(element);
+            BigInteger termBigInteger = BigInteger.valueOf(termLong);
+            result = result.subtract(termBigInteger);
+        }
+
         return result.toString();
     }
 }

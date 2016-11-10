@@ -48,7 +48,6 @@ public class AdditionLongTest {
         });
     }
 
-
     @Test
     public void counter() throws Exception {
 

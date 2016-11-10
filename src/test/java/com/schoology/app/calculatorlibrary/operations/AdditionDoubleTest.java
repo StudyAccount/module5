@@ -16,7 +16,6 @@ import java.util.List;
 @RunWith(value = Parameterized.class)
 public class AdditionDoubleTest {
 
-
     private static List<String> inputData;
     private static String expectation;
     private static final AdditionDouble additionDouble = new AdditionDouble();
@@ -35,6 +34,7 @@ public class AdditionDoubleTest {
         List<String> b = new ArrayList<>();
         b.add("-1.3");
         b.add("-1.3");
+        b.add("0");
         List<String> c = new ArrayList<>();
         c.add("1.7976931348623157E308");
         c.add("-1.7976931348623157E308");
@@ -44,11 +44,10 @@ public class AdditionDoubleTest {
         return Arrays.asList(new Object[][]{
                 {a, "2.8"},
                 {b, "-2.6"},
-                {c, "0E+292"},
+                {c, "0"},
                 {d, "0E-16"},
         });
     }
-
 
     @Test
     public void counter() throws Exception {
@@ -57,6 +56,4 @@ public class AdditionDoubleTest {
         Assert.assertEquals("test results", expectation, actual);
 
     }
-
-
 }

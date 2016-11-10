@@ -48,7 +48,6 @@ public class SubtractionDoubleTest {
         });
     }
 
-
     @Test
     public void counter() throws Exception {
 
@@ -56,5 +55,4 @@ public class SubtractionDoubleTest {
         Assert.assertEquals("test results", expectation, actual);
 
     }
-
 }

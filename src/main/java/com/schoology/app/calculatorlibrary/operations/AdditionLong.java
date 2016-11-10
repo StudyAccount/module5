@@ -11,13 +11,14 @@ public class AdditionLong implements Addition{
     @Override
     public String count(List<String> inputData) {
 
-        Long firstLong = Long.parseLong(inputData.get(0));
-        Long secondLong = Long.parseLong(inputData.get(1));
+        BigInteger result = BigInteger.ZERO;
 
-        BigInteger firstInteger = BigInteger.valueOf(firstLong);
-        BigInteger secondInteger = BigInteger.valueOf(secondLong);
+        for(String element:inputData){
+            Long termLong = Long.parseLong(element);
+            BigInteger termBigInteger = BigInteger.valueOf(termLong);
+            result = result.add(termBigInteger);
+        }
 
-        BigInteger result =firstInteger.add(secondInteger);
         return result.toString();
     }
 }

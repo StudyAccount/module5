@@ -11,13 +11,19 @@ public class SubtractionDouble implements Subtraction {
     @Override
     public String count(List<String> inputData) {
 
-        double firstDouble = Double.parseDouble(inputData.get(0));
-        double secondDouble = Double.parseDouble(inputData.get(1));
+        BigDecimal result = BigDecimal.ZERO;
 
-        BigDecimal firstDecimal = BigDecimal.valueOf(firstDouble);
-        BigDecimal secondDecimal = BigDecimal.valueOf(secondDouble);
+        if (inputData.size() >= 1){
+            double firstElement = Double.parseDouble(inputData.get(0));
+            result = BigDecimal.valueOf(firstElement);
+            inputData.remove(0);
+        }
 
-        BigDecimal result = firstDecimal.subtract(secondDecimal);
+        for(String element:inputData){
+            double termDouble = Double.parseDouble(element);
+            BigDecimal termBigDecimal = BigDecimal.valueOf(termDouble);
+            result = result.subtract(termBigDecimal);
+        }
 
         return result.toString() ;
     }

@@ -11,13 +11,13 @@ public class AdditionDouble implements Addition {
     @Override
     public String count(List<String> inputData) {
 
-        double firstDouble = Double.parseDouble(inputData.get(0));
-        double secondDouble = Double.parseDouble(inputData.get(1));
+        BigDecimal result = BigDecimal.ZERO;
 
-        BigDecimal firstDecimal = BigDecimal.valueOf(firstDouble);
-        BigDecimal secondDecimal = BigDecimal.valueOf(secondDouble);
-
-        BigDecimal result = firstDecimal.add(secondDecimal);
+        for(String element:inputData){
+            double termDouble = Double.parseDouble(element);
+            BigDecimal termBigDecimal = BigDecimal.valueOf(termDouble);
+            result = result.add(termBigDecimal);
+        }
 
         return result.toString();
     }
