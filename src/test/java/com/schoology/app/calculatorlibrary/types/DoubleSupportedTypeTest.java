@@ -17,7 +17,7 @@ public class DoubleSupportedTypeTest {
 
     private static String inputString;
     private static boolean expectation;
-    public static final DoubleSupportedType doubleType = new DoubleSupportedType();
+    private static final DoubleSupportedType doubleType = new DoubleSupportedType();
 
     public DoubleSupportedTypeTest(String inputString, boolean expectation) {
 
@@ -45,7 +45,7 @@ public class DoubleSupportedTypeTest {
 
         final boolean result = doubleType.checkType(inputString);
 
-        Assert.assertArrayEquals("Currrent: ", new boolean[]{expectation}, new boolean[]{result});
+        Assert.assertArrayEquals("Current: ", new boolean[]{expectation}, new boolean[]{result});
 
     }
 }

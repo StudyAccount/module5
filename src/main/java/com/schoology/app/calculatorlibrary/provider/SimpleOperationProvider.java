@@ -13,7 +13,7 @@ import java.util.List;
 public class SimpleOperationProvider implements OperationProvider {
 
     @Override
-    public String checkIfTypeIsSupported(List<String> operands, List<SupportedType> supportedTypesList)
+    public String getTypeIfIsSupported(List<String> operands, List<SupportedType> supportedTypesList)
             throws UnsupportedTypeException {
 
         boolean isSupportedType = false;

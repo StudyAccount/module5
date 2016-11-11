@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface OperationProvider {
 
-    String checkIfTypeIsSupported(List<String> operands, List<SupportedType> supportedTypeList)
+    String getTypeIfIsSupported(List<String> operands, List<SupportedType> supportedTypeList)
 
             throws UnsupportedTypeException;
 

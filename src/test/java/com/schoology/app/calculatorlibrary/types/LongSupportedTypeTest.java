@@ -42,7 +42,7 @@ public class LongSupportedTypeTest {
     public void testCheckForTypeSupport() throws Exception {
 
         final boolean result = longType.checkType(inputString);
-        Assert.assertArrayEquals("Currrent: ", new boolean[]{expectation}, new boolean[]{result});
+        Assert.assertArrayEquals("Current: ", new boolean[]{expectation}, new boolean[]{result});
 
     }
 }

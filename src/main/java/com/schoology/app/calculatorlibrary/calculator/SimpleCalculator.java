@@ -46,7 +46,7 @@ public class SimpleCalculator implements Calculator {
         parser.getOperands();
 
         try {
-            type = operationProvider.checkIfTypeIsSupported(parser.getOperands(), registry.getAvailableTypesList());
+            type = operationProvider.getTypeIfIsSupported(parser.getOperands(), registry.getAvailableTypesList());
         } catch (UnsupportedTypeException e) {
             return e.toString();
 
