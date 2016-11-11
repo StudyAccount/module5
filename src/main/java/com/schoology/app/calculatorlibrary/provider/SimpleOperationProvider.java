@@ -37,7 +37,7 @@ public class SimpleOperationProvider implements OperationProvider {
             }
         }
 
-        throw new UnsupportedTypeException();
+        throw new UnsupportedTypeException("Current types are not supported");
     }
 
     @Override
@@ -51,6 +51,6 @@ public class SimpleOperationProvider implements OperationProvider {
             }
         }
 
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("Current operation is not supported");
     }
 }

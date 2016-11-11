@@ -48,7 +48,7 @@ public class SimpleCalculator implements Calculator {
         try {
             type = operationProvider.checkIfTypeIsSupported(parser.getOperands(), registry.getAvailableTypesList());
         } catch (UnsupportedTypeException e) {
-            return ("Current types are not supported");
+            return e.toString();
 
         }
 
@@ -57,7 +57,7 @@ public class SimpleCalculator implements Calculator {
                     registry.getAvailableOperationsList(), type);
 
         } catch (UnsupportedOperationException e) {
-            return ("Current operation is not supported");
+            return e.toString();
         }
 
         String result = currentOperation.count(parser.getOperands());

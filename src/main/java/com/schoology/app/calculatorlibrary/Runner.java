@@ -11,7 +11,7 @@ public class Runner {
         Calculator simpleCalculator = new SimpleCalculator();
 
         simpleCalculator.init();
-        String currentOperation = simpleCalculator.calculate("+,22.2,100d");
+        String currentOperation = simpleCalculator.calculate("*,22.2,100d");
 
 
         System.out.println(currentOperation);

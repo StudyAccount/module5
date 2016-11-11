@@ -5,8 +5,12 @@ package com.schoology.app.calculatorlibrary.excaption;
  */
 public class UnsupportedTypeException extends Exception{
 
-    public UnsupportedTypeException(){
-
+    public UnsupportedTypeException(String message){
+        super(message);
     }
 
+    @Override
+    public String toString() {
+        return getMessage();
+    }
 }
