@@ -19,4 +19,9 @@ public class DoubleSupportedType implements SupportedType {
 
         return true;
     }
+
+    @Override
+    public String getTypeName() {
+        return "double";
+    }
 }

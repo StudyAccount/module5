@@ -27,4 +27,9 @@ public class AdditionLong implements Addition{
 
         return result.toString();
     }
+
+    @Override
+    public String getTypeOfOperands() {
+        return "long";
+    }
 }

@@ -10,8 +10,8 @@ public class Runner {
     public static void main(String[] args) {
         Calculator simpleCalculator = new SimpleCalculator();
 
-
-        String currentOperation = simpleCalculator.calculate("+,222,000");
+        simpleCalculator.init();
+        String currentOperation = simpleCalculator.calculate("+,22.2,100d");
 
 
         System.out.println(currentOperation);

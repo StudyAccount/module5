@@ -34,4 +34,9 @@ public class SubtractionDouble implements Subtraction {
 
         return result.toString() ;
     }
+
+    @Override
+    public String getTypeOfOperands() {
+        return "double";
+    }
 }

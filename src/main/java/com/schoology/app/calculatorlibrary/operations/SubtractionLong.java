@@ -33,4 +33,9 @@ public class SubtractionLong implements Subtraction {
 
         return result.toString();
     }
+
+    @Override
+    public String getTypeOfOperands() {
+        return "long";
+    }
 }

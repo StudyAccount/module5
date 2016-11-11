@@ -6,4 +6,6 @@ package com.schoology.app.calculatorlibrary.types;
 public interface SupportedType {
 
     boolean checkType(String inputData);
+
+    String getTypeName();
 }

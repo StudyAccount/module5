@@ -19,4 +19,9 @@ public class LongSupportedType implements SupportedType {
 
         return true;
     }
+
+    @Override
+    public String getTypeName() {
+        return "long";
+    }
 }

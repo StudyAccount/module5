@@ -29,4 +29,9 @@ public class AdditionDouble implements Addition {
 
         return result.toString();
     }
+
+    @Override
+    public String getTypeOfOperands() {
+        return "double";
+    }
 }

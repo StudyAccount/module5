@@ -5,8 +5,8 @@ package com.schoology.app.calculatorlibrary.excaption;
  */
 public class UnsupportedOperationException extends Exception {
 
-    public UnsupportedOperationException(String message){
-        super(message);
+    public UnsupportedOperationException(){
+
     }
 
 }

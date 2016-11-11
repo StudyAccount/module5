@@ -19,7 +19,7 @@ public class SimpleCalculatorTest {
 
         inputData.add("12");
         inputData.add("a");
-        simpleCalculator.checkType(inputData);
+//        simpleCalculator.checkType(inputData);
 
 
     }

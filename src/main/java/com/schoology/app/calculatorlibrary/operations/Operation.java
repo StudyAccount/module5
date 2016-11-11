@@ -11,4 +11,6 @@ public interface Operation {
 
     String count(List<String> inputData);
 
+    String getTypeOfOperands();
+
 }
