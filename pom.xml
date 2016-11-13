@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.schoology.app</groupId>
-    <artifactId>homework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>calculatorLib</artifactId>
+    <version>1.0</version>
+
     <build>
         <plugins>
             <plugin>
@@ -17,8 +18,13 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -27,6 +33,8 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
 
 
 </project>

@@ -18,7 +18,7 @@ public class Runner {
 
         while (true) {
 
-            System.out.println("Enter expression");
+            System.out.println("Enter expression:");
             String input = scanner.nextLine();
 
             if ("quit".equals(input)){
