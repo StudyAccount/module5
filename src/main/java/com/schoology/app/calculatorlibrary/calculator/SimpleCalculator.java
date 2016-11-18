@@ -20,6 +20,10 @@ public class SimpleCalculator implements Calculator {
 
     Registry registry = new Registry();
 
+    public void setRegistry(Registry registry) {
+        this.registry = registry;
+    }
+
     @Override
     public void init() {
 
