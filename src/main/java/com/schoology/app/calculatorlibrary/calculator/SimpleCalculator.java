@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class SimpleCalculator implements Calculator {
 
-    Registry registry = new Registry();
+    private Registry registry = new Registry();
 
     public void setRegistry(Registry registry) {
         this.registry = registry;

@@ -11,8 +11,8 @@ import java.util.List;
  */
 public class Registry {
 
-    List<Operation> availableOperationsList = new ArrayList<>();
-    List<SupportedType> availableTypesList =  new ArrayList<>();
+    private List<Operation> availableOperationsList = new ArrayList<>();
+    private List<SupportedType> availableTypesList =  new ArrayList<>();
 
     public void addNewType(SupportedType supportedType){
         availableTypesList.add(supportedType);
